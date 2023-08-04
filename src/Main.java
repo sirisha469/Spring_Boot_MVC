@@ -29,9 +29,27 @@ public class Main {
 
         System.out.println("=================================================");
 
-        System.out.println("A particular product");
+        System.out.println("A particular product by product name");
 
-        Product particular = service.getProduct("Apple Mouse");
-        System.out.println(particular);
+        Product pByName = service.getProduct("Apple Mouse");
+        System.out.println(pByName);
+
+        System.out.println("====================================================");
+        System.out.println("products based on place");
+        List<Product> pByPlace = service.getProductByPlace("White Table");
+
+        for(Product p:pByPlace) {
+            System.out.println(p);
+        }
+
+        System.out.println("=================================================");
+
+        System.out.println("A particular product based on text");
+
+        List<Product> textProd = service.getProductWithText("Black");
+
+        for(Product p:textProd){
+            System.out.println(p);
+        }
     }
 }
